@@ -45,7 +45,5 @@ public class Book {
                 ", qty=" + qty +
                 '}';
     }
-    public String getAuthorNames() {
-        return author.getName();
-    }
+
 }
