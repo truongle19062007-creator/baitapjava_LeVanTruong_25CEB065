@@ -1,15 +1,18 @@
-public class Book {
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
+public class Book2 {
     private String name;
-    private Author author;
+    private Author[] author;
     private double price;
     private int qty = 0;
- 
-    public Book(String name, Author author, double price) {
+
+    public Book2(String name, Author[] author, double price) {
         this.name = name;
         this.author = author;
         this.price = price;
     }
-    public Book(String name, Author author, double price, int qty) {
+    public Book2(String name, Author[] author, double price, int qty) {
         this.name = name;
         this.author = author;
         this.price = price;
@@ -18,7 +21,7 @@ public class Book {
     public String getName() {
         return name;
     }
-    public Author getAuthor() {
+    public Author[] getAuthor() {
         return author;
     }
     public double getPrice() {
@@ -38,12 +41,18 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "Book[" +
                 "name='" + name + '\'' +
-                ", author=" + author +
+                ", author=" + Arrays.toString(author) +
                 ", price=" + price +
                 ", qty=" + qty +
                 '}';
     }
-
+    public String getAuthorNamess(){
+        String listName = "";
+        for (Author a : author) {
+            listName = listName + a.getName() ;
+        }
+        return listName;
+    }
 }
